@@ -19,7 +19,7 @@
   "homepage": "https://github.com/TheTrepanier/hamburguesa#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "handlebars": "^4.1.2",
+    "express-handlebars": "^3.1.0",
     "mysql": "^2.17.1"
   }
 }
