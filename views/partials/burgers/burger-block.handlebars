@@ -1,0 +1,8 @@
+<li class="mt-2" data-id="{{id}}">
+    {{#if notDevoured}}
+        {{burger_name}} Burger
+        <button class="btn btn-outline-secondary btn-sm munch-btn" data-id="{{id}}" data-burger="{{burger_name}}">MUNCH!</button>
+    {{else}}
+        {{burger_name}} Burger
+    {{/if}}
+</li>

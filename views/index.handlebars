@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="text-center mt-4 mb-2">
+        <img src="/assets/img/masthead.jpeg" class="w-25 rounded-lg" alt="One Happy Munchlax">
+    </div>
+    <h1 class="text-center">Chez Munchlax</h1>
+    <div class="input-group input-group-lg w-50 mx-auto">
+        <input type="text" class="form-control" placeholder="Place order" id="burger-type">
+        <div class="input-group-append">
+            <button class="btn btn-dark" type="button">Burger</button>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row">
+            <div id="uneated" class="col text-center">
+                <h3 class="text-center">Burgers To Munch</h3>
+                <ul id="burgers-to-munch" class="w-75">
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            {{> burgers/burger-block notDevoured=true}}
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div id="munched" class="col">
+                <h3 class="text-center">Munched</h3>
+                <ul id="burgers-to-munch" class="w-75">
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            {{> burgers/burger-block notDevoured=false}}
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- JS Down Here --}}
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="/assets/js/pattyslinger.js"></script>

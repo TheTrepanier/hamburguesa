@@ -20,7 +20,7 @@ let orm = {
         });
     },
     updateOne: function (tableName, colName, colValue, conditionCol, conditionVal, callback) {
-        connection.query("UPDATE ?? SET ?? = ?? WHERE ?? = ??", [tableName, colName, colValue, conditionCol, conditionVal], function (error, result) {
+        connection.query("UPDATE ?? SET ?? = ? WHERE ?? = ?", [tableName, colName, colValue, conditionCol, conditionVal], function (error, result) {
             if (error) {
                 console.error(error);
                 return;
