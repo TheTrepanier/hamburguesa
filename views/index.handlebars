@@ -6,7 +6,7 @@
     <div class="input-group input-group-lg w-50 mx-auto">
         <input type="text" class="form-control" placeholder="Place order" id="burger-type">
         <div class="input-group-append">
-            <button class="btn btn-dark" type="button">Burger</button>
+            <button id="sling-burger" class="btn btn-dark" type="button">Burger</button>
         </div>
     </div>
     <div class="container mt-3">
@@ -23,7 +23,7 @@
             </div>
             <div id="munched" class="col">
                 <h3 class="text-center">Munched</h3>
-                <ul id="burgers-to-munch" class="w-75">
+                <ul id="burgers-munched" class="pr-5">
                     {{#each burgers}}
                         {{#if devoured}}
                             {{> burgers/burger-block notDevoured=false}}

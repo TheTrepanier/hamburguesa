@@ -11,7 +11,7 @@ let orm = {
         });
     },
     insertOne: function (tableName, colName, colValue, callback) {
-        connection.query("INSERT INTO ?? (??) VALUES (??)", [tableName, colName, colValue], function (error, result) {
+        connection.query("INSERT INTO ?? (??) VALUES (?)", [tableName, colName, colValue], function (error, result) {
             if (error) {
                 console.error(error);
                 return;
