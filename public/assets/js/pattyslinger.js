@@ -1,4 +1,13 @@
 $(document).ready(function () {
+    var nullBurgers = [ 
+        "void",
+        "negated",
+        "ineffectual",
+        "nugatory",
+        "sterile",
+        "unenforceable",
+        "worthless",
+        "vacuous"]
     $(".munch-btn").on("click", function(event) {
         let id = $(this).data("id");
         let burgerMonch = {
@@ -13,14 +22,28 @@ $(document).ready(function () {
     });
     $("#sling-burger").on("click", function() {
         let burgerName = $("#burger-type").val();
-        let slungBurger = {
-            burger: burgerName
-        };
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: slungBurger
-        }).then(function() {
-            location.reload();
-        });
+        if (burgerName != "") {
+            let slungBurger = {
+                burger: burgerName
+            };
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: slungBurger
+            }).then(function() {
+                location.reload();
+            });
+        } else {
+            let r = Math.floor(Math.random() * nullBurgers.length);
+            burgerName = nullBurgers[r];
+            let slungBurger = {
+                burger: burgerName
+            };
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: slungBurger
+            }).then(function() {
+                location.reload();
+            });
+        }
     });
 });
